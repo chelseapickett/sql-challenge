@@ -1,4 +1,5 @@
---DROP TABLE "employees" CASCADE;
+--DROP TABLE "employees" CASCADE to remedy import problem;
+--Create tables for all csv files, add primary keys
 
 CREATE TABLE "employees" (
     "emp_no" INT   NOT NULL,
@@ -43,6 +44,8 @@ CREATE TABLE "titles" (
         "title_no"
      )
 );
+
+-- add foreign keys
 
 ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY("emp_title_id")
 REFERENCES "titles" ("title_no");
